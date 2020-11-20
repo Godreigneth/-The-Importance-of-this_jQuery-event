@@ -1,0 +1,23 @@
+$(document).ready(function () {
+  $(".box").on("click", function () {
+    /**
+     * When we click on an element this has
+     * a box class, this event will be fired.
+     */
+
+    var classNames = $(this).attr("class").split(" ");
+    var boxClass = classNames[0];
+    var classNames = classNames[1];
+    if ($(this).css("background-color") == "rgb(55, 0, 0)") {
+      // if this object is already red, turn it black
+      $("." + classNames).css("background-color", "#000");
+    } else {
+      // Else turn all elements with a box class black
+      // and then change the color of all elemets
+      // to red.
+
+      $("." + boxClass).css("background-color", "#000");
+      $("." + classNames).css("background-color", "red");
+    }
+  });
+});
